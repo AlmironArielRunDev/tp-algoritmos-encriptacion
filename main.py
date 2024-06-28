@@ -10,14 +10,14 @@ Nota: tener en cuenta la cantidad de caracteres del alfabeto y en el caso de dar
 
 Nota final ejercicio: aplicar la TAD de pilas y se puede usar la del trabajo anterior"""
 
-from funciones import funciones
+# from funciones.funciones import encriptar, desencriptar 
 
 # Ejemplo de uso
-texto_original = "ariel"
-clave = 123456
+texto_original = input('Ingrese un texto: ')
+clave = int(input('Ingrese su clave de seis digitos: '))
 
-texto_encriptado = funciones.encriptar(texto_original, clave)
-print(f"Texto encriptado: {texto_encriptado}")
+# texto_encriptado = encriptar(texto_original, clave)
+# print(f"Texto encriptado: {texto_encriptado}")
 
-texto_desencriptado = funciones.desencriptar(texto_encriptado, clave)
-print(f"Texto desencriptado: {texto_desencriptado}")
+# texto_desencriptado = desencriptar(texto_encriptado, clave)
+# print(f"Texto desencriptado: {texto_desencriptado}")
