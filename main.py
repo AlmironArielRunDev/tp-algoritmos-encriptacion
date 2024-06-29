@@ -7,17 +7,13 @@ El método de encriptación se hará de la siguiente manera:
 La clave numérica sirve para calcular el desplazamiento de cada caracter del texto. 
 Nota: tener en cuenta la cantidad de caracteres del alfabeto y en el caso de dar cero sumar 3
 4) Invertir el texto completo
-
 Nota final ejercicio: aplicar la TAD de pilas y se puede usar la del trabajo anterior"""
 
-# from funciones.funciones import encriptar, desencriptar 
+from funciones.funciones import invertir_letra_cada_palabra
 
-# Ejemplo de uso
 texto_original = input('Ingrese un texto: ')
 clave = int(input('Ingrese su clave de seis digitos: '))
 
-# texto_encriptado = encriptar(texto_original, clave)
-# print(f"Texto encriptado: {texto_encriptado}")
+resultado = invertir_letra_cada_palabra(texto_original)
 
-# texto_desencriptado = desencriptar(texto_encriptado, clave)
-# print(f"Texto desencriptado: {texto_desencriptado}")
+print(resultado)

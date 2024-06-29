@@ -1,13 +1,3 @@
-def cifrado_cesar(texto, desplazamiento):
-    resultado = ""
-    for caracter in texto:
-        if caracter.isalpha():
-            ascii_offset = 65 if caracter.isupper() else 97
-            resultado += chr((ord(caracter) - ascii_offset + desplazamiento) % 26 + ascii_offset)
-        else:
-            resultado += caracter
-    return resultado
------------------------------------
 def encriptar(texto, clave):
     # Paso 1: Invertir cada palabra del texto
     palabras_invertidas = " ".join(invertir_palabra(palabra) for palabra in texto.split())
