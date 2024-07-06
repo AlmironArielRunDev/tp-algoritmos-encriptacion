@@ -1,4 +1,3 @@
-import re
 from tda.tda_pilas import Pila, apilar, desapilar, pila_vacia
 
 # Primer paso: Función para invertir los caracteres de cada palabra
@@ -20,8 +19,8 @@ def invertir_letra_cada_palabra(texto_original):
     return ' '.join(caracteres_invertidos)
 
 # Segundo paso: Función para invertir el orden de las palabras
-def invertir_orden_palabras(texto_original):
-    palabras = texto_original.split(' ')
+def invertir_orden_palabras(texto):
+    palabras = texto.split(' ')
     pila = Pila()
     
     for palabra in palabras:
@@ -33,14 +32,15 @@ def invertir_orden_palabras(texto_original):
     
     return palabras_invertidas.strip()
 
+#Tercer paso: Cifrado del César
 def cifrado_cesar(texto, desplazamiento):
     texto_cifrado = ''
     for caracter in texto:
-        if 32 <= ord(caracter) <= 126:  # Considerar solo caracteres imprimibles
-            nuevo_orden = (ord(caracter) - 32 + desplazamiento) % (126 - 32 + 1) + 32
+        if ord(caracter) >= 32 and ord(caracter) <= 126:  # Considerar solo caracteres imprimibles
+            nuevo_orden = (ord(caracter) - 32 + desplazamiento) % 95 + 32
             texto_cifrado += chr(nuevo_orden)
         else:
-            texto_cifrado += caracter  # Dejar los caracteres no imprimibles sin cambios
+            texto_cifrado += caracter  
     return texto_cifrado
 
 

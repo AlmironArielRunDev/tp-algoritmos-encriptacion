@@ -1,36 +1,26 @@
-def encriptar(texto, clave):
-    # Paso 1: Invertir cada palabra del texto
-    palabras_invertidas = " ".join(invertir_palabra(palabra) for palabra in texto.split())
-    
-    # Paso 2: Invertir el orden de las palabras del texto
-    texto_invertido_orden_palabras = invertir_orden_palabras(palabras_invertidas)
-    
-    # Paso 3: Aplicar el método del César
-    desplazamiento = sum(int(digito) for digito in str(clave)) % 26
-    if desplazamiento == 0:
-        desplazamiento = 3
-    texto_cifrado = cifrado_cesar(texto_invertido_orden_palabras, desplazamiento)
-    
-    # Paso 4: Invertir el texto completo
-    texto_final = invertir_texto(texto_cifrado)
-    
-    return texto_final
------------------------------------
+En Python, `char` y `ord` son funciones relacionadas
+con el manejo de caracteres y sus valores numéricos ASCII o Unicode.
 
-def desencriptar(texto, clave):
-    # Paso 4: Invertir el texto completo
-    texto_invertido = invertir_texto(texto)
-    
-    # Paso 3: Aplicar el método del César con desplazamiento negativo
-    desplazamiento = sum(int(digito) for digito in str(clave)) % 26
-    if desplazamiento == 0:
-        desplazamiento = 3
-    texto_descifrado = cifrado_cesar(texto_invertido, -desplazamiento)
-    
-    # Paso 2: Invertir el orden de las palabras del texto
-    texto_orden_invertido = invertir_orden_palabras(texto_descifrado)
-    
-    # Paso 1: Invertir cada palabra del texto
-    palabras_originales = " ".join(invertir_palabra(palabra) for palabra in texto_orden_invertido.split())
-    
-    return palabras_originales
+1. **`ord()`**:
+   - La función `ord()` toma un carácter (una cadena de un solo carácter) 
+    como argumento y devuelve su valor ASCII (en el caso de caracteres ASCII)
+    o su punto de código Unicode.
+   - Por ejemplo:
+
+     print(ord('a'))  # Salida: 97
+     print(ord('A'))  # Salida: 65
+     print(ord('ñ'))  # Salida: 241
+
+2. **`chr()`**:
+   - La función `chr()` toma un número entero que representa un valor ASCII
+    o un punto de código Unicode y devuelve el carácter correspondiente.
+   - Por ejemplo:
+
+     print(chr(97))  # Salida: 'a'
+     print(chr(65))  # Salida: 'A'
+     print(chr(241))  # Salida: 'ñ'
+
+Estas funciones son útiles para convertir entre caracteres y 
+sus representaciones numéricas, lo que puede ser necesario en diversos 
+contextos de programación, como cifrado, decodificación de textos, 
+o manipulación de cadenas a nivel de bytes.
