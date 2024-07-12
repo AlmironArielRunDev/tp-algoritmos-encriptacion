@@ -3,7 +3,7 @@ from tda.tda_pilas import Pila, apilar, desapilar, pila_vacia
 # Primer paso: Función para invertir los caracteres de cada palabra
 def invertir_letra_cada_palabra(texto_original):
     palabras = texto_original.split(' ')
-    caracteres_invertidos = []
+    caracteres_invertidos = [] 
 
     for palabra in palabras:
         pila = Pila()
